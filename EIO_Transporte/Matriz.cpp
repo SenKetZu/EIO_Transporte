@@ -59,7 +59,7 @@ void Matriz::NortWest()
 				if (isborderCero(pos))continue;
 				if (_MatrizFuncional[i][j])
 				{					
-					float cant = getMenor(getBorders({pos}));
+					float cant = getMenor(getBorders(pos));
 					restToBorders(pos, cant);
 					_MatrizAuxiliar[i][j] = cant;
 				}
@@ -122,15 +122,6 @@ void Matriz::print()
 
 
 
-	for (auto e : _MatrizFinal)
-	{
-		for (auto f : e)
-		{
-			std::cout << "|" << f << "|";
-		}
-		std::cout << std::endl;
-	}
-	std::cout << "---------------------------------" << std::endl;
 
 	_MatrizFinal.clear();
 	std::vector<int> aux;
@@ -145,6 +136,19 @@ void Matriz::print()
 		}
 		_MatrizFinal.push_back(aux);
 	}
+
+
+	for (auto e : _MatrizFinal)
+	{
+		for (auto f : e)
+		{
+			std::cout << "|" << f << "|";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << "---------------------------------" << std::endl;
+
+
 
 	int total = 0;
 
